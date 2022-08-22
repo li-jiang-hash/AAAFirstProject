@@ -1,4 +1,4 @@
-package com.aaa.project.dao;
+package com.aaa.project.entity;
 
 /**
  * @Author:江Sir

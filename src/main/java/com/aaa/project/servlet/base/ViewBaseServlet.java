@@ -1,4 +1,4 @@
-package org.aaa.imperial.court.servlet.base;
+package com.aaa.project.servlet.base;
 
 
 import org.thymeleaf.TemplateEngine;
@@ -38,12 +38,12 @@ public class ViewBaseServlet extends HttpServlet {
 
         // ②设置前缀
         String viewPrefix = servletContext.getInitParameter("view-prefix");
-
+        System.out.println(viewPrefix);
         templateResolver.setPrefix(viewPrefix);
 
         // ③设置后缀
         String viewSuffix = servletContext.getInitParameter("view-suffix");
-
+        System.out.println(viewSuffix);
         templateResolver.setSuffix(viewSuffix);
 
         // ④设置缓存过期时间（毫秒）

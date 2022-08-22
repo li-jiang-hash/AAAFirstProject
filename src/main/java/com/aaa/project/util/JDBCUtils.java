@@ -1,4 +1,4 @@
-package org.aaa.imperial.court.util;
+package com.aaa.project.util;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 
@@ -35,7 +35,6 @@ public class JDBCUtils {
 //        ClassLoader classLoader = JDBCUtils.class.getClassLoader();
 //
         InputStream stream = JDBCUtils.class.getClassLoader().getResourceAsStream("jdbc.properties");
-
 
         try {
             properties.load(stream);

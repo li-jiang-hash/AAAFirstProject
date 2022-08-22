@@ -1,4 +1,4 @@
-package org.aaa.imperial.court.util;
+package com.aaa.project.util;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

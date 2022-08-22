@@ -1,4 +1,4 @@
-package org.aaa.imperial.court.util;
+package com.aaa.project.util;
 
 /**
  * @Author:江Sir
@@ -8,7 +8,7 @@ package org.aaa.imperial.court.util;
  */
 public class ImperialCourtConst {
 
-    public static final String LOGIN_FAILED_MESSAGE = "账号、密码错误，不可进宫！";
-    public static final String ACCESS_DENIED_MESSAGE = "宫闱禁地，不得擅入！";
+    public static final String LOGIN_FAILED_MESSAGE = "账号、密码错误，请重新登录！！！";
+    public static final String ACCESS_DENIED_MESSAGE = "访问数据涉及隐私，请重新登录！！！";
     public static final String LOGIN_EMP_ATTR_NAME = "loginInfo";
 }

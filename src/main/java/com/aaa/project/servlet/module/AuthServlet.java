@@ -1,6 +1,7 @@
 package com.aaa.project.servlet.module;
 
 import com.aaa.project.entity.User;
+import com.aaa.project.exception.LoginFailedException;
 import com.aaa.project.service.api.UserService;
 import com.aaa.project.service.impl.UserServiceImpl;
 import com.aaa.project.servlet.base.ModelBaseServlet;
@@ -20,21 +21,38 @@ import java.io.IOException;
  * @Version 1.0.0
  */
 @WebServlet("/auth")
-public class LoginServlet extends ModelBaseServlet {
+public class AuthServlet extends ModelBaseServlet {
 
     private UserService userService = new UserServiceImpl();
-    protected void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String loginAccount =request.getParameter("loginAccount");
-        String loginPassword =request.getParameter("loginPassword");
 
-        User user = userService.getUidByLoginAccount(loginAccount,loginPassword);
-        HttpSession session = request.getSession();
-        session.setAttribute(ImperialCourtConst.LOGIN_EMP_ATTR_NAME, user);
-        response.sendRedirect(request.getContextPath()+"inde");
+    protected void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try{
+
+            String loginAccount =request.getParameter("loginAccount");
+            String loginPassword =request.getParameter("loginPassword");
+            System.out.println("loginAccount" + loginAccount);
+            System.out.println("loginPassword" + loginPassword);
+            User user = userService.getUidByLoginAccount(loginAccount,loginPassword);
+            HttpSession session = request.getSession();
+            session.setAttribute(ImperialCourtConst.LOGIN_EMP_ATTR_NAME, user);
+            response.sendRedirect(request.getContextPath()+"/work?method=showCartDigestList");
+
+
+
+        }catch (Exception e){
+            if(e instanceof LoginFailedException){
+                request.setAttribute("message",e.getMessage());
+
+                processTemplate("login",request,response);
+            }else {
+                throw new RuntimeException(e);
+            }
+
+        }
     }
 
 //    @Override
 //    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        super.doPost(request, response);
+//        this.doPost(request, response);
 //    }
 }

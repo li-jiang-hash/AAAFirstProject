@@ -1,6 +1,6 @@
-package org.aaa.imperial.court.dao;
+package com.aaa.project.dao;
 
-import org.aaa.imperial.court.util.JDBCUtils;
+import com.aaa.project.util.JDBCUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
