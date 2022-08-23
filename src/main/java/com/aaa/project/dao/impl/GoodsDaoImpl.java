@@ -20,8 +20,6 @@ public class GoodsDaoImpl extends BaseDao<Goods> implements GoodsDao {
                 "goods_name goodName," +
                 "goods_price goodPrice," +
                 "goods_slogan goodSlogan from project_goods;";
-        System.out.println(getBeanList(sql, Goods.class));
-        return null;
-
+         return getBeanList(sql, Goods.class);
     }
 }

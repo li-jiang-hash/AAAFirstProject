@@ -22,8 +22,8 @@ public class BrandFilter implements Filter {
         staticResourceExtNameSet = new HashSet<>();
         staticResourceExtNameSet.add(".png");
         staticResourceExtNameSet.add(".jpg");
-        staticResourceExtNameSet.add(".css");
-        staticResourceExtNameSet.add(".js");
+//        staticResourceExtNameSet.add(".css");
+//        staticResourceExtNameSet.add(".js");
     }
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
